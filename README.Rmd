@@ -18,37 +18,30 @@ knitr::opts_chunk$set(
 <!-- badges: start -->
 <!-- badges: end -->
 
-The goal of nameformeR is to ...
+nameformeR is an R translation of our python package [nameforme](https://github.com/UBC-MDS/nameforme)
 
-## Installation
+A helper package that can be used to generate names based on the dateset. This could be used to come up with baby names, character names, pseudonyms, etc.
 
-You can install the development version of nameformeR like so:
+Source Data: Contains baby names born in the United States for each year from 1880 to 2017, and the number of children of each sex given each name. Names must appear at least 5 times in the each year to be included. (Source: http://www.ssa.gov/oact/babynames/limits.html)
 
-``` r
-# FILL THIS IN! HOW CAN PEOPLE INSTALL YOUR DEV PACKAGE?
-```
+This package is similar to an existing R package called [randomNames](https://cran.r-project.org/web/packages/randomNames/) in CRAN. This package focuses on generating random first and last names by ethnicity, whereas ours only generates first names, but provides more helper methods for users to customize what type of names to generate, including the ability to generate similar sounding names.
 
-## Example
+## Functions Included
 
-This is a basic example which shows you how to solve a common problem:
+Note that the name of functions are not finalized. They are subject to change.
 
-```{r example}
-library(nameformeR)
-## basic example code
-```
+The package is an assimilation of four independent functions:
 
-What is special about using `README.Rmd` instead of just `README.md`? You can include R chunks like so:
 
-```{r cars}
-summary(cars)
-```
+- `find_unisex_name`: Generate the a random set of 10 suggested neutral baby names based on the given limitation and baby names in the past years.
 
-You'll still need to render `README.Rmd` regularly, to keep `README.md` up-to-date. `devtools::build_readme()` is handy for this. You could also use GitHub Actions to re-render `README.Rmd` every time you push. An example workflow can be found here: <https://github.com/r-lib/actions/tree/v1/examples>.
+- `find_old_name`: Generate the a random set of 10 suggested neutral(by default) baby names based on the given time period and sex.
 
-You can also embed plots, for example:
+- `find_similar_name`: Generate the a random set of 10 suggested similar baby names based on the syllable of the input name. 
 
-```{r pressure, echo = FALSE}
-plot(pressure)
-```
+- `find_name`: Generate the a random set of 10 suggested baby names based on the given limitations.
 
-In that case, don't forget to commit and push the resulting figure files, so they display on GitHub and CRAN.
+
+## License
+
+`nameforme` was created by Daniel Cairns, Eyre Hong, Bruce Wu, Zilong Yi (UBC MDS). It is licensed under the terms of the MIT license.

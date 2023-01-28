@@ -27,16 +27,17 @@ find_unisex_name <- function(bar, limit = 10) {
   # data wrangling
   bar_data_boy <- data[(data$prop > bar) & (data$sex == "M"), ] # select all the boy names with prop greater than bar
   bar_data_girl <- data[(data$prop > bar) & (data$sex == "F"), ] # select all the girl names with prop greater than bar
-  target_names <- intersect(bar_data_girl$name, bar_data_boy$name) # unisex names
+  target_names <- intersect(bar_data_girl$name, bar_data_boy$name) # a vector of unisex name 
   
   # Create name list
   common_unisex_names <- c("Skylar", "Azariah", "Royal", "Hayden", "Emerson", 
                            "Rowan", "Baylor", "Dakota", "River", "Emory","Jessie",
-                           "Marion","Jackie","Alva","Ollie","Jodie","Cleo","Kerry")
+                           "Marion","Jackie","Alva","Ollie","Jodie","Cleo","Kerry") # add default names if limit is too high
   if (length(target_names) < limit) {
     result <- c(target_names, sample(common_unisex_names, limit - length(target_names)))
-  } else {
-    result <- sample(target_names, limit)
+  } 
+    else {
+    result <- list(sample(target_names, limit))
   }
   
   return(result)

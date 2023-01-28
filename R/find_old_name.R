@@ -12,8 +12,8 @@ library(tidyverse, quietly = TRUE)
 #' @examples
 #' find_old_name('1980s')
 find_old_name <- function(tp, limit=10, sex="uni", seed=NULL) {
-  URL = "https://raw.githubusercontent.com/rfordatascience/tidytuesday/master/data/2022/2022-03-22/babynames.csv"
-  data = read_csv(URL,col_types = cols())
+  URL <-  "https://raw.githubusercontent.com/rfordatascience/tidytuesday/master/data/2022/2022-03-22/babynames.csv"
+  data <-  read_csv(URL,col_types = cols())
   # Data wrangling
   data <- data |> mutate(tp = case_when(
     between(year, 1880, 1890) ~ '1880s',

@@ -4,7 +4,7 @@
 \alias{find_old_name}
 \title{Generate the a random set of 10 suggested neutral(by default) baby names based on the given time period and sex.}
 \usage{
-find_old_name(tp, limit = 10, sex = "uni")
+find_old_name(tp, limit = 10, sex = "uni", seed = NULL)
 }
 \arguments{
 \item{tp}{A character vector that specifying time period from 1880 to 2018}
@@ -12,6 +12,8 @@ find_old_name(tp, limit = 10, sex = "uni")
 \item{limit}{A double vector that is the number of name in the output list. Default 10}
 
 \item{sex}{A character vector that is the aimed sex of the name in the output. Default "uni"}
+
+\item{seed}{A seed for generating same output. Default NULL}
 }
 \value{
 A list contains random suggested old names based on the given limitation.
@@ -20,5 +22,5 @@ A list contains random suggested old names based on the given limitation.
 Generate the a random set of 10 suggested neutral(by default) baby names based on the given time period and sex.
 }
 \examples{
-find_old_name('80s')
+find_old_name('1980s')
 }

@@ -2,4 +2,5 @@
 
 export(find_name)
 export(find_old_name)
+export(find_similar_name)
 export(find_unisex_name)

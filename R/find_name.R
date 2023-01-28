@@ -1,7 +1,7 @@
-require(testthat)
-require(tidyverse)
-require(stringr)
-
+require(testthat,quietly = TRUE)
+require(tidyverse,quietly = TRUE)
+require(stringr,quietly = TRUE)
+require(readr,quietly = TRUE)
 #' Generate the a random set of 10 suggested baby names based on the given limitations.
 #'
 #' @param sex A character vector which is sex of baby's name
@@ -12,6 +12,7 @@ require(stringr)
 #' @export
 #'
 #' @examples
+#' find_name('F', 'A', 3)
 find_name <- function(sex, init, length) {
   # Check input type of sex
   if (!is.character(sex)) {
@@ -44,14 +45,16 @@ find_name <- function(sex, init, length) {
   }
 
   # Data loading and cleaning
+  name <- NULL
+  n <- NULL
   url <- "https://raw.githubusercontent.com/rfordatascience/tidytuesday/master/data/2022/2022-03-22/babynames.csv"
-  raw_df <- read.csv(url)
-  raw_df <- raw_df %>% filter(raw_df$n >= 100) # Keep only names that had at least 100 births for a single gender in a single year
+  raw_df <- readr::read_csv(url)
+  raw_df <- raw_df |> dplyr::filter(n >= 100) # Keep only names that had at least 100 births for a single gender in a single year
 
   # Filter data based on the arguments
-  df_sex <- raw_df %>% filter(sex == toupper(sex))
-  df_init <- df_sex %>% filter(str_detect(name, paste0("^", toupper(init))))
-  df_len <- df_init %>% filter(str_length(name) == length)
+  df_sex <- raw_df |> dplyr::filter(sex == toupper(sex))
+  df_init <- df_sex |> dplyr::filter(stringr::str_detect(name, paste0("^", toupper(init))))
+  df_len <- df_init |> dplyr::filter(stringr::str_length(name) == length)
 
   # Create name list and randomly select 10 names
   name_list <- unique(df_len$name)

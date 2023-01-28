@@ -17,4 +17,6 @@ Config/testthat/edition: 3
 Imports:
     tidyverse,
     comparator,
-    stringr
+    stringr,
+    dplyr,
+    readr

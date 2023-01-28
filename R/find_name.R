@@ -1,18 +1,17 @@
+require(testthat)
+require(tidyverse)
+require(stringr)
+
 #' Generate the a random set of 10 suggested baby names based on the given limitations.
 #'
 #' @param sex A character vector which is sex of baby's name
 #' @param init A character vector which the initial of baby's name
-#' @param len A double vector that is the length of baby's name
+#' @param length A double vector that is the length of baby's name
 #'
 #' @return A list contains random suggested names based on the given limitation.
 #' @export
 #'
 #' @examples
-#' find_name('F', 'A', 3)
-#> [1] "Ace" "Aya" "Ann" "Amy" "Aja" "Ada" "Avi" "Ari" "Axl" "Ani"
-
-library(tidyverse)
-
 find_name <- function(sex, init, length) {
   # Check input type of sex
   if (!is.character(sex)) {
@@ -47,7 +46,7 @@ find_name <- function(sex, init, length) {
   # Data loading and cleaning
   url <- "https://raw.githubusercontent.com/rfordatascience/tidytuesday/master/data/2022/2022-03-22/babynames.csv"
   raw_df <- read.csv(url)
-  raw_df <- raw_df %>% filter(n >= 100) # Keep only names that had at least 100 births for a single gender in a single year
+  raw_df <- raw_df %>% filter(raw_df$n >= 100) # Keep only names that had at least 100 births for a single gender in a single year
 
   # Filter data based on the arguments
   df_sex <- raw_df %>% filter(sex == toupper(sex))

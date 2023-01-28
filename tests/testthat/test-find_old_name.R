@@ -19,7 +19,7 @@ test_find_old_name <- function() {
   test_that("The list generated is not random", {
     first_call = find_old_name("1980s")
     second_call = find_old_name("1980s")
-    expect_false(first_call == second_call)
+    expect_equal(sum(first_call == second_call),0)
   })
 
   # Test that name is actually of given sex

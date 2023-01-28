@@ -2,21 +2,23 @@
 % Please edit documentation in R/find_similar_name.R
 \name{find_similar_name}
 \alias{find_similar_name}
-\title{Generate the a random set of 10 (by default) suggested similar baby names based on the syllable of the input name.}
+\title{Generate a random list of names that sound similar to a given user input name.
+Uses Match rating approach algorithm to determine similarity}
 \usage{
-find_similar_name(name, limit = 10)
+find_similar_name(match_name, limit = 10)
 }
 \arguments{
-\item{name}{A character vector that is the given name used to find similar names based on syllable}
+\item{match_name}{A character vector that is the name for comparison; output names will sound like this one}
 
-\item{limit}{A double vector that is the number of name in the output list. Default 10}
+\item{limit}{An integer vector that is the number of names in the output list. Default 10}
 }
 \value{
-A list contains random suggested similar names based on the given name.
+A vector containing random suggested similar names based on the given name.
 }
 \description{
-Generate the a random set of 10 (by default) suggested similar baby names based on the syllable of the input name.
+Generate a random list of names that sound similar to a given user input name.
+Uses Match rating approach algorithm to determine similarity
 }
 \examples{
-find_similar_name('Rowan')
+find_similar_name('Elizabeth', 5)
 }

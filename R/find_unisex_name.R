@@ -37,7 +37,7 @@ find_unisex_name <- function(bar, limit = 10) {
     result <- c(target_names, sample(common_unisex_names, limit - length(target_names)))
   } 
     else {
-    result <- list(sample(target_names, limit))
+    result <- sample(target_names, limit)
   }
   
   return(result)

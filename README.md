@@ -32,18 +32,25 @@ change.
 
 The package is an assimilation of four independent functions:
 
-- `find_unisex_name`: Generate the a random set of 10 suggested neutral
+- `find_name`: Generate a random set of 10 suggested baby names based on
+  the given limitations.
+
+- `find_unisex_name`: Generate the a random set of suggested neutral
   baby names based on the given limitation and baby names in the past
   years.
 
-- `find_old_name`: Generate the a random set of 10 suggested neutral(by
+- `find_old_name`: Generate a random set of suggested neutral(by
   default) baby names based on the given time period and sex.
 
-- `find_similar_name`: Generate the a random set of 10 suggested similar
-  baby names based on the syllable of the input name.
+- `find_similar_name`: Generate a random list of names that sound
+  similar to a given user input name.
 
-- `find_name`: Generate the a random set of 10 suggested baby names
-  based on the given limitations.
+## Dependencies
+
+- comparator (\>= 0.1.2),
+- stringr (\>= 1.5.0),
+- dplyr (\>= 1.0.10),
+- readr (\>= 2.1.3)
 
 ## License
 

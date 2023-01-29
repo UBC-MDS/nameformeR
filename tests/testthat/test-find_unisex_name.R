@@ -25,7 +25,7 @@ test_find_unisex_name <- function() {
     result1 <- find_unisex_name(bar = 0.02, limit = 10)
     result2 <- find_unisex_name(bar = 0.01, limit = 10)
     test_that("output should be different for different bar value", {
-        expect_not_identical(result1, result2)
+        expect_equal(sum(result1 == result2),0)
     })
 }
 

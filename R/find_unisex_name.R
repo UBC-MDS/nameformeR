@@ -1,8 +1,5 @@
-require(testthat,quietly = TRUE)
-require(tidyverse,quietly = TRUE)
 require(stringr,quietly = TRUE)
 require(readr,quietly = TRUE)
-
 #' Generate the a random set of 10 suggested neutral baby names based on the given limitation and baby names in the past years.
 #'
 #' @param limit A float controls the minimum proportion of the neutral names in a single year in the dataframe.

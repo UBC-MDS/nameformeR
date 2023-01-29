@@ -1,5 +1,4 @@
 require(testthat)
-require(tidyverse)
 require(stringr)
 
 test_find_unisex_name <- function() {

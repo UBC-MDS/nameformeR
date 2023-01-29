@@ -1,5 +1,4 @@
 require(testthat)
-require(tidyverse)
 require(stringr)
 
 test_find_old_name <- function() {
@@ -25,9 +24,9 @@ test_find_old_name <- function() {
   # Test that name is actually of given sex
   test_that("Does not give name of right sex", {
     URL <-  "https://raw.githubusercontent.com/rfordatascience/tidytuesday/master/data/2022/2022-03-22/babynames.csv"
-    data <-  read_csv(URL,col_types = cols())
-    data <- data |> filter(sex == "M") |> pull(name)
-    call = find_old_name("1980s", sex = "M")
+    data <-  readr::read_csv(URL,col_types = readr::cols())
+    data <- data |> dplyr::filter(sex == "M") |> dplyr::pull(name)
+    call <- find_old_name("1980s", sex = "M")
     expect_equal(sum(call %in% data), 10)
   })
 }

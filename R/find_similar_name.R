@@ -1,12 +1,6 @@
 require(dplyr, quietly = TRUE)
 require(comparator, quietly = TRUE)
 require(readr, quietly = TRUE)
-
-n <- NULL
-name <- NULL
-similarity <- NULL
-weight <- NULL
-
 #' Generate a random list of names that sound similar to a given user input name.
 #' Uses Match rating approach algorithm to determine similarity
 #'
@@ -19,7 +13,10 @@ weight <- NULL
 #' @examples
 #' find_similar_name('Elizabeth', 5)
 find_similar_name <- function(match_name, limit=10) {
-
+  n <- NULL
+  name <- NULL
+  similarity <- NULL
+  weight <- NULL
   # Data loading and cleaning
   url <- "https://raw.githubusercontent.com/rfordatascience/tidytuesday/master/data/2022/2022-03-22/babynames.csv"
   data <- readr::read_csv(url) |>

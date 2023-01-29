@@ -1,4 +1,3 @@
-require(tidyverse,quietly = TRUE)
 require(readr,quietly = TRUE)
 #' Generate the a random set of 10 suggested neutral(by default) baby names based on the given time period and sex.
 #'

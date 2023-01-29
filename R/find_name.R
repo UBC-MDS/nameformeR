@@ -1,5 +1,3 @@
-require(testthat,quietly = TRUE)
-require(tidyverse,quietly = TRUE)
 require(stringr,quietly = TRUE)
 require(readr,quietly = TRUE)
 #' Generate the a random set of 10 suggested baby names based on the given limitations.

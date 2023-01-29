@@ -4,17 +4,20 @@
 \alias{find_unisex_name}
 \title{Generate the a random set of 10 suggested neutral baby names based on the given limitation and baby names in the past years.}
 \usage{
-find_unisex_name(limit = 0.2)
+find_unisex_name(bar, limit = 10)
 }
 \arguments{
-\item{limit}{A double vector that is the minimum proportion of the neutral names in a single year in the data frame. Default 0.2}
+\item{bar}{The length of the output with a default value of 10.}
+
+\item{limit}{A float controls the minimum proportion of the neutral names in a single year in the dataframe.}
 }
 \value{
-A list contains random 10 suggested neutral names based on the given limitation
+A word list containing random suggested neutral names based on the given limitation
+If the length of the word list is less than the limitation, it will return all the names in the word list
 }
 \description{
 Generate the a random set of 10 suggested neutral baby names based on the given limitation and baby names in the past years.
 }
 \examples{
-find_unisex_name(0.0001)
+find_unisex_name(0.002,limit=10)
 }

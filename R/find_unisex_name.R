@@ -22,7 +22,7 @@ find_unisex_name <- function(bar, limit = 10) {
   
   # Load data
   url <- "https://raw.githubusercontent.com/rfordatascience/tidytuesday/master/data/2022/2022-03-22/babynames.csv"
-  data <- readr::read.csv(url)
+  data <- readr::read_csv(url)
   
   # data wrangling
   bar_data_boy <- data[(data$prop > bar) & (data$sex == "M"), ] # select all the boy names with prop greater than bar

@@ -4,6 +4,8 @@
 # nameformeR
 
 <!-- badges: start -->
+
+[![R-CMD-check](https://github.com/UBC-MDS/nameformeR/actions/workflows/R-CMD-check.yaml/badge.svg)](https://github.com/UBC-MDS/nameformeR/actions/workflows/R-CMD-check.yaml)
 <!-- badges: end -->
 
 nameformeR is an R translation of our python package

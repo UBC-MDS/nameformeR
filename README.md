@@ -5,8 +5,7 @@
 
 [![R-CMD-check](https://github.com/UBC-MDS/nameformeR/actions/workflows/R-CMD-check.yaml/badge.svg)](https://github.com/UBC-MDS/nameformeR/actions/workflows/R-CMD-check.yaml)
 [![codecov](https://codecov.io/gh/UBC-MDS/nameformeR/branch/main/graph/badge.svg?token=OvnPkhjXuL)](https://codecov.io/gh/UBC-MDS/nameformeR)
-[![License:
-MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+[![License:MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
 <!-- badges: end -->
 
@@ -82,7 +81,7 @@ The package is an assimilation of four independent functions:
 
 - comparator (\>= 0.1.2),
 - stringr (\>= 1.5.0),
-- dplyr (\>= 1.0.10),
+- dplyr (\>= 1.1.0),
 - readr (\>= 2.1.3)
 
 ## License

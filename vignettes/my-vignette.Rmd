@@ -18,7 +18,7 @@ Below is a basic example of how to use each of the four functions included in th
 # Install pacakge
 ```{r setup}
 # Download the package
-devtools::install_github("UBC-MDS/nameformeR")
+library(nameformeR)
 ```
 # Functions
 

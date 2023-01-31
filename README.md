@@ -1,3 +1,8 @@
+---
+editor_options: 
+  markdown: 
+    wrap: 72
+---
 
 <!-- README.md is generated from README.Rmd. Please edit that file -->
 
@@ -9,6 +14,7 @@
 [![codecov](https://codecov.io/gh/UBC-MDS/nameformeR/branch/main/graph/badge.svg?token=OvnPkhjXuL)](https://codecov.io/gh/UBC-MDS/nameformeR)
 [![License:
 MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+
 <!-- badges: end -->
 
 nameformeR is an R translation of our python package
@@ -30,6 +36,35 @@ ethnicity, whereas ours only generates first names, but provides more
 helper methods for users to customize what type of names to generate,
 including the ability to generate similar sounding names.
 
+## Installation
+To get a bug fix or to use a feature from the development version, you can install the development version of dplyr from GitHub.
+```
+# install.packages("devtools")
+devtools::install_github("UBC-MDS/nameformeR")
+```
+
+## Usage
+```
+# Please make sure installation is successful before proceeding. 
+
+# Generate a random set of 10 suggested baby names based on the given limitations.
+
+# if the given limitation can match to at least 10 names, a list of 10 names will be provided
+find_name("F", "A", length=3)
+
+#if the given limitation can only match less than 10 names, all matched names will be provided
+find_name("m", "b", length=9)
+
+# Generate a random set of suggested neutral(by default) baby names based on the given time period and sex.
+find_old_name('1980s', limit=3)
+
+# Generate a random list of names that sound similar to a given user input name.
+find_similar_name('Daniel', limit=20)
+
+# Generate the a random set of suggested neutral baby names based on the given limitation and baby names in the past years.
+find_unisex_name(bar=0.02,limit=10)
+```
+
 ## Functions Included
 
 Note that the name of functions are not finalized. They are subject to
@@ -37,25 +72,25 @@ change.
 
 The package is an assimilation of four independent functions:
 
-- `find_name`: Generate a random set of 10 suggested baby names based on
-  the given limitations.
+-   `find_name`: Generate a random set of 10 suggested baby names based
+    on the given limitations.
 
-- `find_unisex_name`: Generate the a random set of suggested neutral
-  baby names based on the given limitation and baby names in the past
-  years.
+-   `find_unisex_name`: Generate the a random set of suggested neutral
+    baby names based on the given limitation and baby names in the past
+    years.
 
-- `find_old_name`: Generate a random set of suggested neutral(by
-  default) baby names based on the given time period and sex.
+-   `find_old_name`: Generate a random set of suggested neutral(by
+    default) baby names based on the given time period and sex.
 
-- `find_similar_name`: Generate a random list of names that sound
-  similar to a given user input name.
+-   `find_similar_name`: Generate a random list of names that sound
+    similar to a given user input name.
 
 ## Dependencies
 
-- comparator (\>= 0.1.2),
-- stringr (\>= 1.5.0),
-- dplyr (\>= 1.0.10),
-- readr (\>= 2.1.3)
+-   comparator (\>= 0.1.2),
+-   stringr (\>= 1.5.0),
+-   dplyr (\>= 1.0.10),
+-   readr (\>= 2.1.3)
 
 ## License
 

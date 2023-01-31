@@ -48,7 +48,7 @@ find_name <- function(sex, init, length) {
   name <- NULL
   n <- NULL
   url <- "https://raw.githubusercontent.com/rfordatascience/tidytuesday/master/data/2022/2022-03-22/babynames.csv"
-  raw_df <- readr::read_csv(url)
+  raw_df <- readr::read_csv(url,col_types = readr::cols())
   raw_df <- raw_df |> dplyr::filter(n >= 100) # Keep only names that had at least 100 births for a single gender in a single year
 
   # Filter data based on the arguments
@@ -144,7 +144,7 @@ find_similar_name <- function(match_name, limit=10) {
   weight <- NULL
   # Data loading and cleaning
   url <- "https://raw.githubusercontent.com/rfordatascience/tidytuesday/master/data/2022/2022-03-22/babynames.csv"
-  data <- readr::read_csv(url) |>
+  data <- readr::read_csv(url,col_types = readr::cols()) |>
     dplyr::filter(n >= 100) |>
     dplyr::distinct(name) |>
     dplyr::filter(name != match_name)
@@ -179,7 +179,7 @@ find_unisex_name <- function(bar, limit = 10) {
 
   # Load data
   url <- "https://raw.githubusercontent.com/rfordatascience/tidytuesday/master/data/2022/2022-03-22/babynames.csv"
-  data <- readr::read_csv(url)
+  data <- readr::read_csv(url,col_types = readr::cols())
 
   # data wrangling
   bar_data_boy <- data[(data$prop > bar) & (data$sex == "M"), ] # select all the boy names with prop greater than bar

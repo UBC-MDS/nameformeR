@@ -41,7 +41,7 @@
 <li class="nav-item dropdown">
   <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown" role="button" aria-expanded="false" aria-haspopup="true" id="dropdown-articles">Articles</a>
   <div class="dropdown-menu" aria-labelledby="dropdown-articles">
-    <a class="dropdown-item" href="articles/my-vignette.html">my-vignette</a>
+    <a class="dropdown-item" href="articles/my-vignette.html">Example Usage</a>
   </div>
 </li>
       </ul>
@@ -61,10 +61,40 @@
 </h1></div>
 <!-- badges: start -->
 
+<!-- badges: end -->
 <p>nameformeR is an R translation of our python package <a href="https://github.com/UBC-MDS/nameforme" class="external-link">nameforme</a></p>
 <p>A helper package that can be used to generate names based on the dateset. This could be used to come up with baby names, character names, pseudonyms, etc.</p>
 <p>Source Data: Contains baby names born in the United States for each year from 1880 to 2017, and the number of children of each sex given each name. Names must appear at least 5 times in the each year to be included. (Source: <a href="http://www.ssa.gov/oact/babynames/limits.html" class="external-link uri">http://www.ssa.gov/oact/babynames/limits.html</a>)</p>
 <p>This package is similar to an existing R package called <a href="https://cran.r-project.org/web/packages/randomNames/" class="external-link">randomNames</a> in CRAN. This package focuses on generating random first and last names by ethnicity, whereas ours only generates first names, but provides more helper methods for users to customize what type of names to generate, including the ability to generate similar sounding names.</p>
+<div class="section level2">
+<h2 id="installation">Installation<a class="anchor" aria-label="anchor" href="#installation"></a>
+</h2>
+<p>To get a bug fix or to use a feature from the development version, you can install the development version of dplyr from GitHub.</p>
+<pre><code><span><span class="co"># install.packages("devtools")</span></span>
+<span><span class="fu">devtools</span><span class="fu">::</span><span class="fu"><a href="https://remotes.r-lib.org/reference/install_github.html" class="external-link">install_github</a></span><span class="op">(</span><span class="st">"UBC-MDS/nameformeR"</span><span class="op">)</span></span></code></pre>
+</div>
+<div class="section level2">
+<h2 id="usage">Usage<a class="anchor" aria-label="anchor" href="#usage"></a>
+</h2>
+<pre><code><span><span class="co"># Please make sure installation is successful before proceeding. </span></span>
+<span></span>
+<span><span class="co"># Generate a random set of 10 suggested baby names based on the given limitations.</span></span>
+<span></span>
+<span><span class="co"># if the given limitation can match to at least 10 names, a list of 10 names will be provided</span></span>
+<span><span class="fu"><a href="reference/find_name.html">find_name</a></span><span class="op">(</span><span class="st">"F"</span>, <span class="st">"A"</span>, length<span class="op">=</span><span class="fl">3</span><span class="op">)</span></span>
+<span></span>
+<span><span class="co">#if the given limitation can only match less than 10 names, all matched names will be provided</span></span>
+<span><span class="fu"><a href="reference/find_name.html">find_name</a></span><span class="op">(</span><span class="st">"m"</span>, <span class="st">"b"</span>, length<span class="op">=</span><span class="fl">9</span><span class="op">)</span></span>
+<span></span>
+<span><span class="co"># Generate a random set of suggested neutral(by default) baby names based on the given time period and sex.</span></span>
+<span><span class="fu"><a href="reference/find_old_name.html">find_old_name</a></span><span class="op">(</span><span class="st">'1980s'</span>, limit<span class="op">=</span><span class="fl">3</span><span class="op">)</span></span>
+<span></span>
+<span><span class="co"># Generate a random list of names that sound similar to a given user input name.</span></span>
+<span><span class="fu"><a href="reference/find_similar_name.html">find_similar_name</a></span><span class="op">(</span><span class="st">'Daniel'</span>, limit<span class="op">=</span><span class="fl">20</span><span class="op">)</span></span>
+<span></span>
+<span><span class="co"># Generate the a random set of suggested neutral baby names based on the given limitation and baby names in the past years.</span></span>
+<span><span class="fu"><a href="reference/find_unisex_name.html">find_unisex_name</a></span><span class="op">(</span>bar<span class="op">=</span><span class="fl">0.02</span>,limit<span class="op">=</span><span class="fl">10</span><span class="op">)</span></span></code></pre>
+</div>
 <div class="section level2">
 <h2 id="functions-included">Functions Included<a class="anchor" aria-label="anchor" href="#functions-included"></a>
 </h2>

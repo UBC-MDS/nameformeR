@@ -26,7 +26,7 @@
     
     <a class="navbar-brand me-2" href="index.html">nameformeR</a>
 
-    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">0.0.0.9000</small>
+    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">1.1.0</small>
 
     
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
@@ -70,30 +70,30 @@
 <h2 id="installation">Installation<a class="anchor" aria-label="anchor" href="#installation"></a>
 </h2>
 <p>To get a bug fix or to use a feature from the development version, you can install the development version of dplyr from GitHub.</p>
-<pre><code><span><span class="co"># install.packages("devtools")</span></span>
-<span><span class="fu">devtools</span><span class="fu">::</span><span class="fu"><a href="https://remotes.r-lib.org/reference/install_github.html" class="external-link">install_github</a></span><span class="op">(</span><span class="st">"UBC-MDS/nameformeR"</span><span class="op">)</span></span></code></pre>
+<div class="sourceCode" id="cb1"><pre class="sourceCode R"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co"># install.packages("devtools")</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>devtools<span class="sc">::</span><span class="fu">install_github</span>(<span class="st">"UBC-MDS/nameformeR"</span>)</span></code></pre></div>
 </div>
 <div class="section level2">
 <h2 id="usage">Usage<a class="anchor" aria-label="anchor" href="#usage"></a>
 </h2>
-<pre><code><span><span class="co"># Please make sure installation is successful before proceeding. </span></span>
-<span></span>
-<span><span class="co"># Generate a random set of 10 suggested baby names based on the given limitations.</span></span>
-<span></span>
-<span><span class="co"># if the given limitation can match to at least 10 names, a list of 10 names will be provided</span></span>
-<span><span class="fu"><a href="reference/find_name.html">find_name</a></span><span class="op">(</span><span class="st">"F"</span>, <span class="st">"A"</span>, length<span class="op">=</span><span class="fl">3</span><span class="op">)</span></span>
-<span></span>
-<span><span class="co">#if the given limitation can only match less than 10 names, all matched names will be provided</span></span>
-<span><span class="fu"><a href="reference/find_name.html">find_name</a></span><span class="op">(</span><span class="st">"m"</span>, <span class="st">"b"</span>, length<span class="op">=</span><span class="fl">9</span><span class="op">)</span></span>
-<span></span>
-<span><span class="co"># Generate a random set of suggested neutral(by default) baby names based on the given time period and sex.</span></span>
-<span><span class="fu"><a href="reference/find_old_name.html">find_old_name</a></span><span class="op">(</span><span class="st">'1980s'</span>, limit<span class="op">=</span><span class="fl">3</span><span class="op">)</span></span>
-<span></span>
-<span><span class="co"># Generate a random list of names that sound similar to a given user input name.</span></span>
-<span><span class="fu"><a href="reference/find_similar_name.html">find_similar_name</a></span><span class="op">(</span><span class="st">'Daniel'</span>, limit<span class="op">=</span><span class="fl">20</span><span class="op">)</span></span>
-<span></span>
-<span><span class="co"># Generate the a random set of suggested neutral baby names based on the given limitation and baby names in the past years.</span></span>
-<span><span class="fu"><a href="reference/find_unisex_name.html">find_unisex_name</a></span><span class="op">(</span>bar<span class="op">=</span><span class="fl">0.02</span>,limit<span class="op">=</span><span class="fl">10</span><span class="op">)</span></span></code></pre>
+<div class="sourceCode" id="cb2"><pre class="sourceCode R"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Please make sure installation is successful before proceeding. </span></span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Generate a random set of 10 suggested baby names based on the given limitations.</span></span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a><span class="co"># if the given limitation can match to at least 10 names, a list of 10 names will be provided</span></span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a>nameformeR<span class="sc">::</span><span class="fu">find_name</span>(<span class="st">"F"</span>, <span class="st">"A"</span>, <span class="at">length=</span><span class="dv">3</span>)</span>
+<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a><span class="co">#if the given limitation can only match less than 10 names, all matched names will be provided</span></span>
+<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a>nameformeR<span class="sc">::</span><span class="fu">find_name</span>(<span class="st">"m"</span>, <span class="st">"b"</span>, <span class="at">length=</span><span class="dv">9</span>)</span>
+<span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-11"><a href="#cb2-11" aria-hidden="true" tabindex="-1"></a><span class="co"># Generate a random set of suggested neutral(by default) baby names based on the given time period and sex.</span></span>
+<span id="cb2-12"><a href="#cb2-12" aria-hidden="true" tabindex="-1"></a>nameformeR<span class="sc">::</span><span class="fu">find_old_name</span>(<span class="st">'1980s'</span>, <span class="at">limit=</span><span class="dv">3</span>)</span>
+<span id="cb2-13"><a href="#cb2-13" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-14"><a href="#cb2-14" aria-hidden="true" tabindex="-1"></a><span class="co"># Generate a random list of names that sound similar to a given user input name.</span></span>
+<span id="cb2-15"><a href="#cb2-15" aria-hidden="true" tabindex="-1"></a>nameformeR<span class="sc">::</span><span class="fu">find_similar_name</span>(<span class="st">'Daniel'</span>, <span class="at">limit=</span><span class="dv">20</span>)</span>
+<span id="cb2-16"><a href="#cb2-16" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-17"><a href="#cb2-17" aria-hidden="true" tabindex="-1"></a><span class="co"># Generate the a random set of suggested neutral baby names based on the given limitation and baby names in the past years.</span></span>
+<span id="cb2-18"><a href="#cb2-18" aria-hidden="true" tabindex="-1"></a>nameformeR<span class="sc">::</span><span class="fu">find_unisex_name</span>(<span class="at">bar=</span><span class="fl">0.02</span>,<span class="at">limit=</span><span class="dv">10</span>)</span></code></pre></div>
 </div>
 <div class="section level2">
 <h2 id="functions-included">Functions Included<a class="anchor" aria-label="anchor" href="#functions-included"></a>
@@ -113,7 +113,7 @@
 <ul>
 <li>comparator (&gt;= 0.1.2),</li>
 <li>stringr (&gt;= 1.5.0),</li>
-<li>dplyr (&gt;= 1.0.10),</li>
+<li>dplyr (&gt;= 1.1.0),</li>
 <li>readr (&gt;= 2.1.3)</li>
 </ul>
 </div>
@@ -160,8 +160,9 @@
 <h2 data-toc-skip>Dev status</h2>
 <ul class="list-unstyled">
 <li><a href="https://github.com/UBC-MDS/nameformeR/actions/workflows/R-CMD-check.yaml" class="external-link"><img src="https://github.com/UBC-MDS/nameformeR/actions/workflows/R-CMD-check.yaml/badge.svg" alt="R-CMD-check"></a></li>
+<li><a href="https://github.com/UBC-MDS/nameformeR/actions/workflows/test-coverage.yaml" class="external-link"><img src="https://github.com/UBC-MDS/nameformeR/actions/workflows/test-coverage.yaml/badge.svg" alt="test-coverage"></a></li>
 <li><a href="https://codecov.io/gh/UBC-MDS/nameformeR" class="external-link"><img src="https://codecov.io/gh/UBC-MDS/nameformeR/branch/main/graph/badge.svg?token=OvnPkhjXuL" alt="codecov"></a></li>
-<li><a href="https://opensource.org/licenses/MIT" class="external-link"><img src="https://img.shields.io/badge/License-MIT-yellow.svg" alt="License: MIT"></a></li>
+<li><a href="https://opensource.org/licenses/MIT" class="external-link"><img src="https://img.shields.io/badge/License-MIT-yellow.svg" alt="License:MIT"></a></li>
 </ul>
 </div>
 

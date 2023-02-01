@@ -17,7 +17,10 @@ Below is a basic example of how to use each of the four functions included in th
 
 # Install pacakge
 ```{r setup}
-# Download the package
+# Comment the below line to download the package
+# install.packages("devtools")
+
+# Use our package
 library(nameformeR)
 ```
 # Functions

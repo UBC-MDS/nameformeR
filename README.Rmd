@@ -19,6 +19,7 @@ knitr::opts_chunk$set(
 <!-- badges: start -->
 
 [![R-CMD-check](https://github.com/UBC-MDS/nameformeR/actions/workflows/R-CMD-check.yaml/badge.svg)](https://github.com/UBC-MDS/nameformeR/actions/workflows/R-CMD-check.yaml)
+[![test-coverage](https://github.com/UBC-MDS/nameformeR/actions/workflows/test-coverage.yaml/badge.svg)](https://github.com/UBC-MDS/nameformeR/actions/workflows/test-coverage.yaml)
 [![codecov](https://codecov.io/gh/UBC-MDS/nameformeR/branch/main/graph/badge.svg?token=OvnPkhjXuL)](https://codecov.io/gh/UBC-MDS/nameformeR)
 [![License:MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 

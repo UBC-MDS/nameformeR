@@ -10,6 +10,8 @@
 
 <!-- badges: end -->
 
+This package is available for vignette pages [reviewing](https://ubc-mds.github.io/nameformeR/).
+
 nameformeR is an R translation of our python package
 [nameforme](https://github.com/UBC-MDS/nameforme)
 
